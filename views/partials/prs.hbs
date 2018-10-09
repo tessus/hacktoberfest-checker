@@ -2,17 +2,17 @@
     <div class="tc white">
         <div class="pb4 flex justify-center">
             <div class="pa1">
-                <a class="twitter-share-button white no-underline f6"
+                <a class="twitter-share-button white no-underline f6" id="twitter-share"
                     href="https://twitter.com/share"
                     data-size="large"
                     data-text="My progress on hacktoberfest {{ prs.length }} / {{prAmount}}"
-                    data-url="https://hacktoberfestchecker.herokuapp.com/?username={{username}}"
+                    data-url="{{hostname}}/?username={{username}}"
                     data-hashtags="hacktoberfest, hacktoberfestchecker">
                     Tweet
                 </a>
             </div>
-            <div class="fb-share-button pa1"
-                data-href="https://hacktoberfestchecker.herokuapp.com/?username={{username}}"
+            <div class="fb-share-button pa1" id="fb-share"
+                data-href="{{hostname}}/?username={{username}}"
                 data-layout="button"
                 data-size="large">
                     <a class="fb-xfbml-parse-ignore" href="https://www.facebook.com/sharer/sharer.php">Share</a>
