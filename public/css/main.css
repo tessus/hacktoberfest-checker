@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #412B3B;
+  background-color: rgb(21, 35, 71);
   font-family: "proxima-nova", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", "Arial", sans-serif;
 }
 
@@ -63,4 +63,28 @@ h1 {
 
 .bg-white.orange, .bg-white .orange {
     color: #a52607;
+}
+
+.dark-blue {
+  color: rgb(21, 35, 71);
+}
+
+.light-blue {
+  color: #92EAFF;
+}
+
+.mid-blue {
+  color: #39486E;
+}
+
+.mid-purple {
+  color: #A11EC6;
+}
+
+.bg-mid-purple {
+  background-color: #A11EC6;
+}
+
+.mid-grey {
+  color: #99a1b3;
 }

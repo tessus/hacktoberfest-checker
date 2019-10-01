@@ -3,14 +3,13 @@
 const _ = require('lodash');
 const moment = require('moment');
 
-const prAmount = 5;
+const prAmount = 4;
 
 const statements = [
     'It\'s not too late to start!',
     'Off to a great start, keep going!',
     'Keep it up!',
-    'Nice! Now, don\'t stop!',
-    'So close!',
+    'So close. Now, don\'t stop!',
     'Way to go!',
     'Now you\'re just showing off!'
 ];
@@ -193,6 +192,7 @@ function findPrs(github, username) {
             pullRequestData = _.map(pullRequestData, event => {
                 const repo = event.pull_request.html_url.substring(0, event.pull_request.html_url.search('/pull/'));
                 const hacktoberFestLabels = _.some(event.labels, label => label.name.toLowerCase() === 'hacktoberfest');
+                const weekOld = moment().subtract(7, 'days').startOf('day');
 
                 return {
                     has_hacktoberfest_label: hacktoberFestLabels,
@@ -202,6 +202,7 @@ function findPrs(github, username) {
                     title: event.title,
                     url: event.html_url,
                     created_at: moment(event.created_at).format('MMMM Do YYYY'),
+                    is_pending: moment(event.created_at).isAfter(weekOld),
                     user: {
                         login: event.user.login,
                         url: event.user.html_url
