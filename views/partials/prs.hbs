@@ -33,14 +33,6 @@
         </div>
     </div>
 
-    {{#if isNotComplete }}
-        <div class="flex flex-wrap justify-center content-center">
-            <div class="light-gray pb3">
-                Look at the following <a href="https://github.com/search?q=label:hacktoberfest+state:open+type:issue" class="mid-purple" target="_blank">issues</a> and get hacking!</a>
-            </div>
-        </div>
-    {{/if}}
-
     {{#if prs.length}}
         <div class="br2 center shadow-1 overflow-hidden w-50-ns w-80-m w-90 mb4">
             {{#each prs}}
@@ -73,6 +65,14 @@
                     </div>
                 </div>
             {{/each}}
+        </div>
+    {{/if}}
+
+    {{#if isNotComplete }}
+        <div class="flex flex-wrap justify-center content-center">
+            <div class="light-gray pb3">
+                Look at the following <a href="https://github.com/search?q=label:hacktoberfest+state:open+type:issue" class="mid-purple" target="_blank">issues</a> and get hacking!</a>
+            </div>
         </div>
     {{/if}}
 
