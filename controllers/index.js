@@ -54,7 +54,9 @@ exports.index = (req, res) => {
     // e.g.: http://example.com/hacktoberfest/?username=XXX
     // in such a case we set hostname to an empty string and create the link
     // with js after the page has loaded
-    if (req.headers['x-forwarded-for']) {
+    if (process.env.APP_URL) {
+        hostname = process.env.APP_URL;
+    } else if (req.headers['x-forwarded-for']) {
         const referer = req.headers.referer;
         if (referer) {
             hostname = referer.split('?')[0].slice(0, -1);
